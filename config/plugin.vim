@@ -14,6 +14,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'kien/ctrlp.vim'
   Plug 'andymass/vim-matchup'
   Plug 'sheerun/vim-polyglot'
+  Plug 'airblade/vim-gitgutter'
+  Plug 'terryma/vim-multiple-cursors'
   Plug 'joshdick/onedark.vim'
 call plug#end()
 
@@ -26,39 +28,6 @@ let g:deoplete#max_menu_width = 20
 let g:deoplete#skip_chars = ['(', ')', '<', '>']
 let g:deoplete#tag#cache_limit_size = 800000
 let g:deoplete#file#enable_buffer_path = 1
-
-let g:deoplete#sources#jedi#statement_length = 30
-let g:deoplete#sources#jedi#show_docstring = 1
-let g:deoplete#sources#jedi#short_types = 1
-call deoplete#custom#source('_', 'min_pattern_length', 2)
-let g:deoplete#sources = get(g:, 'deoplete#sources', {})
-let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
-
-" Omni functions and patterns " {{{
-" ---
-" let g:deoplete#keyword_patterns = {}
-" let g:deoplete#keyword_patterns._ = '[a-zA-Z_]\k*\(?'
-
-let g:deoplete#omni#functions = get(g:, 'deoplete#omni#functions', {})
-let g:deoplete#omni#functions.css = 'csscomplete#CompleteCSS'
-let g:deoplete#omni#functions.html = 'htmlcomplete#CompleteTags'
-let g:deoplete#omni#functions.markdown = 'htmlcomplete#CompleteTags'
-
-let g:deoplete#omni_patterns = get(g:, 'deoplete#omni_patterns', {})
-let g:deoplete#omni_patterns.html = '<[^>]*'
-let g:deoplete#omni_patterns.php =
-	\ '\h\w*\|[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
-
-let g:deoplete#omni#input_patterns = get(g:, 'deoplete#omni#input_patterns', {})
-let g:deoplete#omni#input_patterns.xml = '<[^>]*'
-let g:deoplete#omni#input_patterns.md = '<[^>]*'
-let g:deoplete#omni#input_patterns.css  = '^\s\+\w\+\|\w\+[):;]\?\s\+\w*\|[@!]'
-let g:deoplete#omni#input_patterns.scss = '^\s\+\w\+\|\w\+[):;]\?\s\+\w*\|[@!]'
-let g:deoplete#omni#input_patterns.sass = '^\s\+\w\+\|\w\+[):;]\?\s\+\w*\|[@!]'
-let g:deoplete#omni#input_patterns.python = ''
-let g:deoplete#omni#input_patterns.javascript = ''
-
-" }}}
 
 " Key-mappings and Events " {{{
 " ---
@@ -74,17 +43,7 @@ imap     <expr><C-d> pumvisible() ? "\<PageDown>" : "\<C-d>"
 imap     <expr><C-u> pumvisible() ? "\<PageUp>" : "\<C-u>"
 
 " Undo completion
-" inoremap <expr><C-g> deoplete#undo_completion()
-
-" Redraw candidates
-inoremap <expr><C-g> deoplete#refresh()
-inoremap <expr><C-l> deoplete#complete_common_string()
-
-" <CR>: If popup menu visible, expand snippet or close popup with selection,
-"       Otherwise, check if within empty pair and use delimitMate.
-inoremap <silent><expr><CR> pumvisible() ?
-	\ (neosnippet#expandable() ? neosnippet#mappings#expand_impl() : deoplete#close_popup())
-		\ : (delimitMate#WithinEmptyPair() ? "\<C-R>=delimitMate#ExpandReturn()\<CR>" : "\<CR>")
+inoremap <expr><C-g> deoplete#undo_completion()
 
 " <Tab> completion:
 " 1. If popup menu is visible, select and insert next item
@@ -108,9 +67,6 @@ function! s:is_whitespace() "{{{
 	return ! col || getline('.')[col - 1] =~? '\s'
 endfunction "}}}
 " }}}
-
-" vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :
-
 
 
 
@@ -185,4 +141,16 @@ let g:lightline = {
       \ 'subseparator': { 'left': ' ', 'right': ' ' }
       \ }
 
+" Multiple-cursors
+let g:multi_cursor_use_default_mapping=0
+
+" Default mapping
+let g:multi_cursor_start_word_key      = '<C-d>'
+let g:multi_cursor_select_all_word_key = '<A-d>'
+let g:multi_cursor_start_key           = 'g<C-d>'
+let g:multi_cursor_select_all_key      = 'g<A-d>'
+let g:multi_cursor_next_key            = '<C-d>'
+let g:multi_cursor_prev_key            = '<C-p>'
+let g:multi_cursor_skip_key            = '<C-x>'
+let g:multi_cursor_quit_key            = '<Esc>'
 
