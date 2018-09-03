@@ -13,6 +13,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'easymotion/vim-easymotion'
   Plug 'kien/ctrlp.vim'
   Plug 'andymass/vim-matchup'
+  Plug 'sheerun/vim-polyglot'
+  Plug 'joshdick/onedark.vim'
 call plug#end()
 
 " deoplete
@@ -163,7 +165,7 @@ map <leader>nf :NERDTreeFind<cr>
 
 " LightLine
 let g:lightline = {
-      \ 'colorscheme': 'one',
+      \ 'colorscheme': 'onedark',
       \ 'active': {
       \   'left': [ ['mode', 'paste'],
       \             ['fugitive', 'readonly', 'filename', 'modified'] ],

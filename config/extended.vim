@@ -29,8 +29,6 @@ set guioptions-=L
 
 " Colorscheme
 set background=dark
-colorscheme peaksea
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Turn persistent undo on 
