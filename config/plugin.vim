@@ -17,6 +17,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'joshdick/onedark.vim'
+  Plug 'elzr/vim-json'
+  Plug 'andreshazard/vim-logreview'
 call plug#end()
 
 " deoplete
