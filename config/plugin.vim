@@ -1,6 +1,8 @@
 " Install with vim-plug
 call plug#begin('~/.local/share/nvim/plugged')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'Shougo/neosnippet.vim'
+  Plug 'Shougo/neosnippet-snippets'
   Plug 'mileszs/ack.vim'
   Plug 'vim-scripts/nginx.vim'
   Plug 'vim-scripts/mru.vim'
