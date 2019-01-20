@@ -1,8 +1,10 @@
 abbr  v nvim
-alias vim nvim
-alias ... 'cd ../../'
-alias .... 'cd ../../../'
-alias la 'ls -trhla --color=always'
+abbr vim nvim
+abbr ... 'cd ../../'
+abbr .... 'cd ../../../'
+abbr la 'ls -trhla --color=always'
+abbr diff 'diff -y --color=always'
+abbr cdiff 'colordiff -tys'
 
 set -x PATH $HOME/miniconda3/bin $PATH
 set -x PATH /usr/local/go/bin $PATH
