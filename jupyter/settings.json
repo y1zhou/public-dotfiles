@@ -8,7 +8,7 @@
     // The configuration for all code cells.
     "codeCellConfig": {
       "autoClosingBrackets": true,
-      "fontFamily": "mononoki,Consolas,Menlo,Monaco,'DejaVu Sans Mono',monospace,sans-serif",
+      "fontFamily": "'JetBrains Mono',Consolas,Menlo,Monaco,'DejaVu Sans Mono',monospace,sans-serif",
       "fontSize": 15,
       "lineHeight": null,
       "lineNumbers": true,
@@ -24,7 +24,7 @@
     // The configuration for all markdown cells.
     "markdownCellConfig": {
       "autoClosingBrackets": false,
-      "fontFamily": "mononoki,Consolas,Menlo,Monaco,'DejaVu Sans Mono',sans-serif,monospace",
+      "fontFamily": "'JetBrains Mono',Consolas,Menlo,Monaco,'DejaVu Sans Mono',sans-serif,monospace",
       "fontSize": null,
       "lineHeight": null,
       "lineNumbers": false,
@@ -40,7 +40,7 @@
     // The configuration for all raw cells.
     "rawCellConfig": {
       "autoClosingBrackets": false,
-      "fontFamily": "mononoki,Consolas,Menlo,Monaco,'DejaVu Sans Mono',sans-serif,monospace",
+      "fontFamily": "'JetBrains Mono',Consolas,Menlo,Monaco,'DejaVu Sans Mono',sans-serif,monospace",
       "fontSize": null,
       "lineHeight": null,
       "lineNumbers": false,
