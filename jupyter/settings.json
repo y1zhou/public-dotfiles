@@ -50,5 +50,6 @@
       "insertSpaces": true,
       "tabSize": 4,
       "wordWrapColumn": 80
-    }
+    },
+    "recordTiming": true
 }
