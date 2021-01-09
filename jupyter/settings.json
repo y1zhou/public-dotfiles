@@ -7,49 +7,49 @@
     // Code Cell Configuration
     // The configuration for all code cells.
     "codeCellConfig": {
-      "autoClosingBrackets": true,
-      "fontFamily": "'JetBrains Mono',Consolas,Menlo,Monaco,'DejaVu Sans Mono',monospace,sans-serif",
-      "fontSize": 15,
-      "lineHeight": null,
-      "lineNumbers": true,
-      "lineWrap": "off",
-      "matchBrackets": true,
-      "readOnly": false,
-      "insertSpaces": true,
-      "tabSize": 4,
-      "wordWrapColumn": 80
+        "autoClosingBrackets": true,
+        "fontFamily": "'JetBrainsMono NF', Consolas, Menlo, Monaco, 'DejaVu Sans Mono', monospace, sans-serif",
+        "fontSize": 15,
+        "lineHeight": null,
+        "lineNumbers": true,
+        "lineWrap": "off",
+        "matchBrackets": true,
+        "readOnly": false,
+        "insertSpaces": true,
+        "tabSize": 4,
+        "wordWrapColumn": 80
     },
 
     // Markdown Cell Configuration
     // The configuration for all markdown cells.
     "markdownCellConfig": {
-      "autoClosingBrackets": false,
-      "fontFamily": "'JetBrains Mono',Consolas,Menlo,Monaco,'DejaVu Sans Mono',sans-serif,monospace",
-      "fontSize": null,
-      "lineHeight": null,
-      "lineNumbers": false,
-      "lineWrap": "on",
-      "matchBrackets": false,
-      "readOnly": false,
-      "insertSpaces": true,
-      "tabSize": 4,
-      "wordWrapColumn": 80
+        "autoClosingBrackets": false,
+        "fontFamily": "'JetBrainsMono NF', Consolas, Menlo, Monaco, 'DejaVu Sans Mono', monospace, sans-serif",
+        "fontSize": null,
+        "lineHeight": null,
+        "lineNumbers": false,
+        "lineWrap": "on",
+        "matchBrackets": false,
+        "readOnly": false,
+        "insertSpaces": true,
+        "tabSize": 4,
+        "wordWrapColumn": 80
     },
 
     // Raw Cell Configuration
     // The configuration for all raw cells.
     "rawCellConfig": {
-      "autoClosingBrackets": false,
-      "fontFamily": "'JetBrains Mono',Consolas,Menlo,Monaco,'DejaVu Sans Mono',sans-serif,monospace",
-      "fontSize": null,
-      "lineHeight": null,
-      "lineNumbers": false,
-      "lineWrap": "on",
-      "matchBrackets": false,
-      "readOnly": false,
-      "insertSpaces": true,
-      "tabSize": 4,
-      "wordWrapColumn": 80
+        "autoClosingBrackets": false,
+        "fontFamily": "'JetBrainsMono NF', Consolas, Menlo, Monaco, 'DejaVu Sans Mono', monospace, sans-serif",
+        "fontSize": null,
+        "lineHeight": null,
+        "lineNumbers": false,
+        "lineWrap": "on",
+        "matchBrackets": false,
+        "readOnly": false,
+        "insertSpaces": true,
+        "tabSize": 4,
+        "wordWrapColumn": 80
     },
     "recordTiming": true
 }
