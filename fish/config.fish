@@ -1,7 +1,13 @@
-if not functions -q fisher
-    set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
-    curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
-    fish -c fisher
-end
+# Local software path
+set -x PATH /home/pi/pkg/bin $PATH
+set -x PATH /home/pi/.cargo/bin $PATH
 
-source $HOME/.config/fish/functions/y1zhou_config.fish
+# Initialize starship prompt
+starship init fish | source
+
+# Set neovim as default editor
+set -x VISUAL nvim
+set -x EDITOR nvim
+
+# fzf config using ripgrep
+set -x FZF_DEFAULT_COMMAND  'rg --files --no-ignore-vcs --hidden'
