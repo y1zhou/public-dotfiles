@@ -22,11 +22,14 @@ Fish shell setup using [fisher](https://github.com/jorgebucaran/fisher) and some
 
 ```bash
 curl -fsSL https://starship.rs/install.sh | bash
-curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
-fisher install
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+fisher update
 
 # disable completing pairs unless the cursor is at the end of the line
 set -U pisces_only_insert_at_eol 1
+
+# Set the default Node.js version for new shells
+set -U nvm_default_version 14.15.0
 ```
 
 ## Jupyter
