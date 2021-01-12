@@ -25,7 +25,10 @@ curl -fsSL https://starship.rs/install.sh | bash
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 fisher update
 
-# disable completing pairs unless the cursor is at the end of the line
+# Remove login welcome message
+set fish_greeting
+
+# Disable completing pairs unless the cursor is at the end of the line
 set -U pisces_only_insert_at_eol 1
 
 # Set the default Node.js version for new shells
