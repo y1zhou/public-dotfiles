@@ -2,6 +2,8 @@
 call plug#begin('~/.local/share/nvim/plugged')
   Plug 'itchyny/lightline.vim'
   Plug 'scrooloose/nerdtree'
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
   Plug 'chrisbra/csv.vim'
   Plug 'tpope/vim-commentary'
   Plug 'easymotion/vim-easymotion'
@@ -71,4 +73,8 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 " Formatting selected code.
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
+
+" fzf key bindings
+nnoremap <C-p> :Files<Cr>
+nnoremap <silent> <leader><space> :Rg<CR>
 
