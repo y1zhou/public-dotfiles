@@ -9,6 +9,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'easymotion/vim-easymotion'
   Plug 'sheerun/vim-polyglot'
   Plug 'airblade/vim-gitgutter'
+  Plug 'psliwka/vim-smoothie'
+  Plug 'mhinz/vim-startify'
   Plug 'joshdick/onedark.vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
@@ -75,6 +77,6 @@ xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
 " fzf key bindings
-nnoremap <C-p> :Files<Cr>
+nnoremap <C-p> :Files<CR>
 nnoremap <silent> <leader><space> :Rg<CR>
 
