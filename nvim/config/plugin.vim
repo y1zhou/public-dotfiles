@@ -7,6 +7,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'junegunn/fzf.vim'
   Plug 'chrisbra/csv.vim'
   Plug 'tpope/vim-commentary'
+  Plug 'unblevable/quick-scope'
   Plug 'easymotion/vim-easymotion'
   Plug 'sheerun/vim-polyglot'
   Plug 'airblade/vim-gitgutter'
