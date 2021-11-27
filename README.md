@@ -12,9 +12,9 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
-After `vim-plug` is installed, copy the `nvim/` directory to `~/.config/nvim`. Then inside `nvim`, run `:PlugInstall` and `:CocInstall coc-json coc-python coc-sh coc-docker coc-r-lsp`.
+After `vim-plug` is installed, copy the `nvim/` directory to `~/.config/nvim`. Then run `:PlugInstall` inside `nvim`.
 
-The `pynvim` package for Python 3 provider and `neovim` package for Node.js provider are optional but recommended.
+The `pynvim` package for Python 3 provider and `neovim` package for Node.js provider are optional but recommended. To get the LSP client working, language servers need to be installed. For example, `npm i -g pyright` is required for the Python language.
 
 ## Fish
 
