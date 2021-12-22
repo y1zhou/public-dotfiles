@@ -39,6 +39,10 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'hrsh7th/vim-vsnip'
 call plug#end()
 
+" One Dark theme
+set termguicolors
+let g:onedark_terminal_italics=1
+colorscheme onedark
 
 " Nerd Tree
 let g:NERDTreeWinPos = "left"
