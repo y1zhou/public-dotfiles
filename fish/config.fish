@@ -1,6 +1,6 @@
 # Local software path
-set -x PATH /home/pi/pkg/bin $PATH
-set -x PATH /home/pi/.cargo/bin $PATH
+fish_add_path /home/pi/pkg/bin
+fish_add_path /home/pi/.cargo/bin
 
 # Fish syntax highlighting
 # https://github.com/matchai/dotfiles/blob/b6c6a701d0af8d145a8370288c00bb9f0648b5c2/.config/fish/config.fish
