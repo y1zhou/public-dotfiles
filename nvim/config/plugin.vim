@@ -17,6 +17,9 @@ call plug#begin('~/.local/share/nvim/plugged')
   " gcc to comment line(s)
   Plug 'tpope/vim-commentary'
 
+  " Copy text to system clipboard
+  Plug 'ojroques/vim-oscyank'
+
   " Moving around
   Plug 'unblevable/quick-scope'
   Plug 'easymotion/vim-easymotion'
@@ -43,6 +46,9 @@ call plug#end()
 set termguicolors
 let g:onedark_terminal_italics=1
 colorscheme onedark
+
+" OSC yank
+vnoremap <leader>c :OSCYank<CR>
 
 " Nerd Tree
 let g:NERDTreeWinPos = "left"
