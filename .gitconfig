@@ -1,0 +1,20 @@
+[user]
+	name = y1zhou
+[core]
+	autocrlf = input
+	autolf = true
+	eol = native
+	pager = delta
+
+[interactive]
+	diffFilter = delta --color-only
+
+[diff]
+	colorMoved = default
+
+[delta]
+	navigate = true
+	features = side-by-side line-numbers decorations
+
+[merge]
+	conflictStyle = diff3
