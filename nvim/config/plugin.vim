@@ -6,7 +6,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'akinsho/bufferline.nvim'
 
   " File explorer sidebar
-  Plug 'scrooloose/nerdtree'
+  Plug 'kyazdani42/nvim-tree.lua'
 
   " Ctrl-p or ,<space> to search files
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -46,15 +46,12 @@ call plug#end()
 " OSC yank
 vnoremap <leader>c :OSCYank<CR>
 
-" Nerd Tree
-let g:NERDTreeWinPos = "left"
-let NERDTreeShowHidden=1
-let NERDTreeIgnore = ['\.pyc$', '__pycache__']
-let g:NERDTreeWinSize=35
-map <C-e> :NERDTreeToggle<cr>
+" nvim-tree
+" let g:nvim_tree_add_trailing = 1 "0 by default, append a trailing slash to folder names
+map <C-e> :NvimTreeToggle<cr>
 
-" Configure theme, status line and buffer bar
 lua << EOF
+-- Configure theme, status line and buffer bar
 require('onedark').load()
 require('lualine').setup {
   options = {theme = 'onedark'}
@@ -65,6 +62,9 @@ require("bufferline").setup {
   end
 }
 vim.opt.mouse = 'a'
+
+-- Configure sidebar
+require('nvim-tree').setup {}
 EOF
 nnoremap <silent><leader>1 <Cmd>BufferLineGoToBuffer 1<CR>
 nnoremap <silent><leader>2 <Cmd>BufferLineGoToBuffer 2<CR>
