@@ -12,6 +12,9 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
 
+  " Help with possible keybindings
+  Plug 'folke/which-key.nvim'
+
   " Highlight CSV files
   Plug 'chrisbra/csv.vim'
 
@@ -83,6 +86,9 @@ vim.opt.mouse = 'a'
 
 -- Initialize sidebar
 require('nvim-tree').setup {}
+
+-- keybindings popup
+require('which-key').setup {}
 
 -- nvim-treesitter configs
 require('nvim-treesitter.configs').setup {
