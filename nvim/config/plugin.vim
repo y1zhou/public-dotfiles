@@ -26,11 +26,11 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'psliwka/vim-smoothie'
 
   " Aesthetics
+  Plug 'navarasu/onedark.nvim'
   Plug 'sheerun/vim-polyglot'
   Plug 'airblade/vim-gitgutter'
   Plug 'mhinz/vim-startify'
-  Plug 'joshdick/onedark.vim'
-  
+
   " Language server and autocompletion
   Plug 'neovim/nvim-lspconfig'
   Plug 'hrsh7th/cmp-nvim-lsp'
@@ -42,11 +42,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'hrsh7th/vim-vsnip'
 call plug#end()
 
-" One Dark theme
-set termguicolors
-let g:onedark_terminal_italics=1
-colorscheme onedark
-
 " OSC yank
 vnoremap <leader>c :OSCYank<CR>
 
@@ -57,27 +52,10 @@ let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 let g:NERDTreeWinSize=35
 map <C-e> :NERDTreeToggle<cr>
 
-" LightLine
-let g:lightline = {
-      \ 'colorscheme': 'onedark',
-      \ 'active': {
-      \   'left': [ ['mode', 'paste'],
-      \             ['fugitive', 'readonly', 'filename', 'modified'] ],
-      \   'right': [ [ 'lineinfo' ], ['percent'] ]
-      \ },
-      \ 'component': {
-      \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
-      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-      \ },
-      \ 'component_visible_condition': {
-      \   'readonly': '(&filetype!="help"&& &readonly)',
-      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-      \ },
-      \ 'separator': { 'left': ' ', 'right': ' ' },
-      \ 'subseparator': { 'left': ' ', 'right': ' ' }
-      \ }
+lua << EOF
+require('onedark').load()
+
+EOF
 
 " bufferline config and key mappings
 let g:lightline#bufferline#show_number  = 2
