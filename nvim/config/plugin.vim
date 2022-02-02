@@ -47,8 +47,22 @@ call plug#end()
 vnoremap <leader>c :OSCYank<CR>
 
 " nvim-tree
-" let g:nvim_tree_add_trailing = 1 "0 by default, append a trailing slash to folder names
 map <C-e> :NvimTreeToggle<cr>
+
+" fzf key bindings
+nnoremap <C-p> :Files<CR>
+nnoremap <silent> <leader><space> :Rg<CR>
+
+" Jump between buffers
+nnoremap <silent><leader>1 <Cmd>BufferLineGoToBuffer 1<CR>
+nnoremap <silent><leader>2 <Cmd>BufferLineGoToBuffer 2<CR>
+nnoremap <silent><leader>3 <Cmd>BufferLineGoToBuffer 3<CR>
+nnoremap <silent><leader>4 <Cmd>BufferLineGoToBuffer 4<CR>
+nnoremap <silent><leader>5 <Cmd>BufferLineGoToBuffer 5<CR>
+nnoremap <silent><leader>6 <Cmd>BufferLineGoToBuffer 6<CR>
+nnoremap <silent><leader>7 <Cmd>BufferLineGoToBuffer 7<CR>
+nnoremap <silent><leader>8 <Cmd>BufferLineGoToBuffer 8<CR>
+nnoremap <silent><leader>9 <Cmd>BufferLineGoToBuffer 9<CR>
 
 lua << EOF
 -- Configure theme, status line and buffer bar
@@ -63,25 +77,10 @@ require("bufferline").setup {
 }
 vim.opt.mouse = 'a'
 
--- Configure sidebar
+-- Initialize sidebar
 require('nvim-tree').setup {}
-EOF
-nnoremap <silent><leader>1 <Cmd>BufferLineGoToBuffer 1<CR>
-nnoremap <silent><leader>2 <Cmd>BufferLineGoToBuffer 2<CR>
-nnoremap <silent><leader>3 <Cmd>BufferLineGoToBuffer 3<CR>
-nnoremap <silent><leader>4 <Cmd>BufferLineGoToBuffer 4<CR>
-nnoremap <silent><leader>5 <Cmd>BufferLineGoToBuffer 5<CR>
-nnoremap <silent><leader>6 <Cmd>BufferLineGoToBuffer 6<CR>
-nnoremap <silent><leader>7 <Cmd>BufferLineGoToBuffer 7<CR>
-nnoremap <silent><leader>8 <Cmd>BufferLineGoToBuffer 8<CR>
-nnoremap <silent><leader>9 <Cmd>BufferLineGoToBuffer 9<CR>
 
-" fzf key bindings
-nnoremap <C-p> :Files<CR>
-nnoremap <silent> <leader><space> :Rg<CR>
-
-" nvim-lspconfig language servers
-lua << EOF
+-- nvim-lspconfig language servers
   -- Setup nvim-cmp.
   local cmp = require'cmp'
 
