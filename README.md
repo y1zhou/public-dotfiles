@@ -27,12 +27,6 @@ fisher update
 
 # Remove login welcome message
 set fish_greeting
-
-# Disable completing pairs unless the cursor is at the end of the line
-set -U pisces_only_insert_at_eol 1
-
-# Set the default Node.js version for new shells
-set -U nvm_default_version 14.15.0
 ```
 
 ## Jupyter

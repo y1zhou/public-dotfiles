@@ -1,5 +1,4 @@
 # Local software path
-fish_add_path $HOME/pkg/bin
 fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.cargo/bin
 
@@ -26,6 +25,7 @@ set -g fish_color_search_match 'bryellow'  '--background=brblack'
 set -g fish_color_selection 'white'  '--bold'  '--background=brblack'
 set -g fish_color_user brgreen
 set -g fish_color_valid_path --underline
+set -x COLORTERM truecolor
 
 # Set neovim as default editor
 set -x VISUAL nvim
@@ -39,3 +39,4 @@ zoxide init fish | source
 
 # Initialize starship prompt
 starship init fish | source
+
