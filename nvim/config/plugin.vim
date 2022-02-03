@@ -217,5 +217,5 @@ end
 
 -- Show diagnostics on hover
 vim.o.updatetime = 500
-vim.cmd [[autocmd! CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()]]
+vim.cmd [[autocmd! CursorHold * lua vim.diagnostic.open_float()]]
 EOF
