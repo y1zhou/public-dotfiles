@@ -20,6 +20,7 @@ A place to save / share all my dotfiles, and some CLI tools that I use frequentl
 | [neofetch](https://github.com/dylanaraps/neofetch)     | System information                    | [Wiki](https://github.com/dylanaraps/neofetch/wiki/Installation)          |
 | [neovim](https://neovim.io/)                           | Next generation `vim`                 | [GitHub releases](https://github.com/neovim/neovim/releases)              |
 | [openconnect](https://www.infradead.org/openconnect/)  | Cisco AnyConnect VPN client           | [Download page](https://www.infradead.org/openconnect/download/)          |
+| [ouch](https://github.com/ouch-org/ouch)               | Compression and decompression         | `cargo install ouch`                                                      |
 | [rclone](https://rclone.org/)                          | Sync files to cloud storage           | [Binary downloads](https://rclone.org/downloads/)                         |
 | [rename](https://metacpan.org/dist/File-Rename)        | Rename files using regex              | `apt`                                                                     |
 | [ripgrep](https://github.com/BurntSushi/ripgrep)       | Fast and recursive `grep`             | [Wiki](https://github.com/BurntSushi/ripgrep#installation)                |
