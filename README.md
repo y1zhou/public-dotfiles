@@ -12,6 +12,7 @@ A place to save / share all my dotfiles, and some CLI tools that I use frequentl
 | [fnm](https://github.com/Schniz/fnm)                   | Node.js version manager               | `curl -fsSL https://fnm.vercel.app/install \| bash`                       |
 | [fzf](https://github.com/junegunn/fzf)                 | Fuzzy finder                          | See the docs                                                              |
 | [httpie](https://httpie.io/cli)                        | HTTP and API testing client           | `pip` or installation section                                             |
+| [hugo](https://gohugo.io/)                             | Static site generator                 | [Installation guide](https://gohugo.io/getting-started/installing/)       |
 | [jq](https://stedolan.github.io/jq/)                   | JSON processor                        | [Binaries](https://stedolan.github.io/jq/download/)                       |
 | [lima](https://github.com/lima-vm/lima)                | Containers on macOS                   | `brew install lima`                                                       |
 | [litecli](https://github.com/dbcli/litecli)            | Pretty CLI for `sqlite3`              | `pip install litecli`                                                     |
