@@ -18,6 +18,7 @@ upgrade: update
   mamba update --all -y
   rustup update
   cargo install {{rust_packages}}
+  fish -c 'fisher update'
   
 
 # Cleanup Homebrew and conda cache
