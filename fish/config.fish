@@ -12,7 +12,9 @@ set -x VISUAL nvim
 set -x EDITOR nvim
 
 # fzf config using ripgrep
-set -x FZF_DEFAULT_COMMAND  'rg --files --no-ignore-vcs --hidden'
+set -x FZF_DEFAULT_COMMAND  'fd --type file --color=always --follow --hidden --exclude .git'
+set -x FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
+fzf_configure_bindings --directory=\ct
 
 # Add zoxide to path
 zoxide init fish | source
