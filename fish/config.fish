@@ -16,6 +16,14 @@ set -x FZF_DEFAULT_COMMAND  'fd --type file --color=always --follow --hidden --e
 set -x FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 fzf_configure_bindings --directory=\ct
 
+# pyenv and pdm setup
+pyenv init - | source
+if test -n "$PYTHONPATH"
+    set -x PYTHONPATH '/Users/yizhou/.local/pipx/venvs/pdm/lib/python3.10/site-packages/pdm/pep582' $PYTHONPATH
+else
+    set -x PYTHONPATH '/Users/yizhou/.local/pipx/venvs/pdm/lib/python3.10/site-packages/pdm/pep582'
+end
+
 # Add zoxide to path
 zoxide init fish | source
 
