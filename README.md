@@ -55,6 +55,22 @@ fisher update
 set fish_greeting
 ```
 
+## Neovim
+
+I gave up configuring `nvim` by myself and just use [AstroNvim](https://github.com/AstroNvim/AstroNvim) now.
+
 ## Jupyter
 
 The configuration for JupyterHub Notebooks.
+
+## Vim
+
+The config is a simplified version of the combination of two popular `vimrc` files: one from [@amix](https://github.com/amix/vimrc) and another from [@rafi](https://github.com/rafi/vim-config). The plugins are installed through [vim-plug](https://github.com/junegunn/vim-plug):
+
+```bash
+# Neovim
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+After `vim-plug` is installed, copy the `vim/` directory to `~/.config/vim`. Then run `:PlugInstall` inside `vim`.
