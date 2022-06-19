@@ -1,5 +1,22 @@
 local config = {
 
+  -- Configure AstroNvim updates
+  updater = {
+    remote = "origin", -- remote to use
+    channel = "nightly", -- "stable" or "nightly"
+    version = "latest", -- "latest", tag name, or regex search like "v1.*" to only do updates before v2 (STABLE ONLY)
+    branch = "main", -- branch name (NIGHTLY ONLY)
+    commit = nil, -- commit hash (NIGHTLY ONLY)
+    pin_plugins = nil, -- nil, true, false (nil will pin plugins on stable only)
+    skip_prompts = false, -- skip prompts about breaking changes
+    show_changelog = true, -- show the changelog after performing an update
+    -- remotes = { -- easily add new remotes to track
+    --   ["remote_name"] = "https://remote_url.come/repo.git", -- full remote url
+    --   ["remote2"] = "github_user/repo", -- GitHub user/repo shortcut,
+    --   ["remote3"] = "github_user", -- GitHub user assume AstroNvim fork
+    -- },
+  },
+
   -- Set colorscheme
   colorscheme = "default_theme",
 
@@ -7,7 +24,7 @@ local config = {
   options = {
     opt = {
       relativenumber = true, -- sets vim.opt.relativenumber
-      shell = "/bin/zsh",
+      -- shell = "/bin/zsh",
     },
     g = {
       mapleader = " ", -- sets vim.g.mapleader
@@ -62,7 +79,6 @@ local config = {
       -- You can disable default plugins as follows:
       -- ["goolord/alpha-nvim"] = { disable = true },
       { "ojroques/vim-oscyank" },
-      -- { "dstein64/vim-startuptime" },
 
       -- You can also add new plugins here as well:
       -- { "andweeb/presence.nvim" },
@@ -82,7 +98,14 @@ local config = {
       -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
       config.sources = {
         -- Set a formatter
-        null_ls.builtins.formatting.rufo,
+        null_ls.builtins.formatting.black,
+        null_ls.builtins.formatting.isort,
+        null_ls.builtins.formatting.jq,
+        -- null_ls.builtins.formatting.lua_format,
+        null_ls.builtins.formatting.prettierd,
+        -- null_ls.builtins.formatting.shfmt,
+        -- null_ls.builtins.formatting.taplo,
+
         -- Set a linter
         null_ls.builtins.diagnostics.rubocop,
       }
