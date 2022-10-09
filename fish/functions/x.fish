@@ -4,7 +4,7 @@ function x --description "Expand or extract bundled & compressed files"
     if test -f $file
       echo -s "Extracting " (set_color --bold blue) $file (set_color normal)
       switch $file
-        case "*.tar"
+        case "*.tar" "*.tar.xz"
           tar -xvf $file
         case "*.tar.bz2" "*.tbz2"
           tar --bzip2 -xvf $file
