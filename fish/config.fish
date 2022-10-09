@@ -7,26 +7,25 @@ fish_add_path $HOME/.cargo/bin
 # Instead, use fish_config theme save 'fish default'
 set -x COLORTERM truecolor
 
-# Set neovim as default editor
-set -x VISUAL nvim
-set -x EDITOR nvim
+# Set helix as default editor
+set -x VISUAL hx
+set -x EDITOR hx
 
-# fzf config using ripgrep
-set -x FZF_DEFAULT_COMMAND  'fd --type file --color=always --follow --hidden --exclude .git'
-set -x FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
-fzf_configure_bindings --directory=\ct
+# Commands to run in interactive sessions can go here
+if status is-interactive
+    # Configure fzf.fish key bindings
+    # FEATURE            |  MNEMONIC KEY SEQUENCE        |  CORRESPONDING OPTION
+    # Search directory   |  Ctrl+Alt+F (F for file)      |  --directory
+    # Search git log     |  Ctrl+Alt+L (L for log)       |  --git_log
+    # Search git status  |  Ctrl+Alt+S (S for status)    |  --git_status
+    # Search history     |  Ctrl+R     (R for reverse)   |  --history
+    # Search variables   |  Ctrl+V     (V for variable)  |  --variables
+    # Search processes   |  Ctrl+Alt+P (P for process)   |  --processes
+    fzf_configure_bindings --directory=\ct --git_status=\cg --history=\cr --variables=\cv --processes=\cp
+    set fzf_preview_dir_cmd lsd -A --color=always
+    set fzf_fd_opts --hidden --exclude=.git --no-ignore
 
-# pyenv and pdm setup
-pyenv init - | source
-if test -n "$PYTHONPATH"
-    set -x PYTHONPATH '/Users/yizhou/.local/pipx/venvs/pdm/lib/python3.10/site-packages/pdm/pep582' $PYTHONPATH
-else
-    set -x PYTHONPATH '/Users/yizhou/.local/pipx/venvs/pdm/lib/python3.10/site-packages/pdm/pep582'
+    # Setup fish to use starship and zoxide
+    starship init fish | source
+    zoxide init fish | source
 end
-
-# Add zoxide to path
-zoxide init fish | source
-
-# Initialize starship prompt
-starship init fish | source
-
