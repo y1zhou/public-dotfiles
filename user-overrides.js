@@ -44,7 +44,25 @@ user_pref("keyword.enabled", true);
  * [SETUP-WEB] Breakage: older modems/routers and some sites e.g banks, vimeo, icloud, instagram
  * If "2" is too strict, then override to "0" and use Smart Referer extension (Strict mode + add exceptions) ***/
 user_pref("network.http.referer.XOriginPolicy", 0);
+user_pref("network.http.referer.XOriginTrimmingPolicy", 0);
 
 /* override recipe: enable DRM and let me watch videos ***/
 // user_pref("media.gmp-widevinecdm.enabled", true); // 2021 default-inactive in user.js
 user_pref("media.eme.enabled", true); // 2022
+
+/* 0701: disable IPv6
+ * IPv6 can be abused, especially with MAC addresses, and can leak with VPNs: assuming
+ * your ISP and/or router and/or website is IPv6 capable. Most sites will fall back to IPv4
+ * [STATS] Firefox telemetry (Sept 2022) shows ~8% of successful connections are IPv6
+ * [NOTE] This is an application level fallback. Disabling IPv6 is best done at an
+ * OS/network level, and/or configured properly in VPN setups. If you are not masking your IP,
+ * then this won't make much difference. If you are masking your IP, then it can only help.
+ * [NOTE] PHP defaults to IPv6 with "localhost". Use "php -S 127.0.0.1:PORT"
+ * [TEST] https://ipleak.org/
+ * [1] https://www.internetsociety.org/tag/ipv6-security/ (Myths 2,4,5,6) ***/
+user_pref("network.dns.disableIPv6", false);
+
+/* 0210: set preferred language for displaying pages
+ * [SETTING] General>Language and Appearance>Language>Choose your preferred language...
+ * [TEST] https://addons.mozilla.org/about ***/
+user_pref("intl.accept_languages", "en-US, en, zh-CN, zh, zh-TW, zh-HK");
